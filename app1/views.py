@@ -52,3 +52,6 @@ def pei(request):
     tucao_text = request.GET['tucao_text']
     DB_tucao.objects.create(user=request.user.username,text=tucao_text)
     return HttpResponse('')
+
+def api_help(request):
+    return render(request,'welcome.html',{"whichHTML": "api_help.html","oid":""})

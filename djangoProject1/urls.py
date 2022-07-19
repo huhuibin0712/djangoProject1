@@ -28,5 +28,6 @@ urlpatterns = [
     path('register_action/',register_action), #注册
     path('accounts/login/',login), #没有登录的时候，自动重定向到登录页
     path('logout/',logout),  #退出登录
-    path('pei/',pei)  #吐槽文本框
+    path('pei/',pei),  #吐槽文本框
+    path('api_help/',api_help)  #帮助文档页面
 ]

@@ -41,7 +41,7 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Shortcodes">接口调试<span data-hover="Shortcodes"></span></a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Shortcodes">帮助<span data-hover="Shortcodes"></span></a>
+                                    <a href="/api_help/" class="dropdown-toggle" data-toggle="dropdown" data-hover="Shortcodes">帮助<span data-hover="Shortcodes"></span></a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="/admin/" target="_blank" class="dropdown-toggle" data-toggle="dropdown" data-hover="Shortcodes">后台<span data-hover="Shortcodes"></span></a>
@@ -80,6 +80,12 @@
             btn.innerText = '隐藏';
         }
     }
+</script>
+<script>
+    if ("{{ whichHTML }}" != 'home.html'){
+        document.getElementById('menu_btn').click();
+    }
+
 </script>
 
 </body>
