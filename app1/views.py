@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from app1.models import *
 
 @login_required
 def home(request):
@@ -48,4 +49,6 @@ def logout(request):
     return HttpResponseRedirect('/login/')
 
 def pei(request):
-    tucao_test = request.GET['tucao_test']
+    tucao_text = request.GET['tucao_text']
+    DB_tucao.objects.create(user=request.user.username,text=tucao_text)
+    return HttpResponse('')
