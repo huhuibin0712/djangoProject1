@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from app1.models import *
 
+
 @login_required
 def home(request):
     return render(request, 'welcome.html', {"whichHTML": "home.html", "oid": "", "username": "胡会宾"})
@@ -16,7 +17,14 @@ def welcome(request):
     return render(request, 'welcome.html')
 
 def child(request,eid,oid):
-    return render(request, eid)
+    res = child_json(eid)
+    return render(request,eid,res)
+
+def child_json(eid):
+    if eid == 'home.html':
+        data = DB_home_href.objects.all()
+        res = {'hrefs':data}
+    return res
 
 def login(request):
     return render(request, 'login.html')

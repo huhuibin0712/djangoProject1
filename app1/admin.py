@@ -5,3 +5,4 @@ from django.contrib import admin
 from app1.models import *
 
 admin.site.register(DB_tucao)
+admin.site.register(DB_home_href)
